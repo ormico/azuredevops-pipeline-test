@@ -28,13 +28,8 @@ steps:
     projects: 'AzureDevopsPipelineTest/*.sln'
     workingDirectory: 'AzureDevopsPipelineTest'
     configuration: $(buildConfiguration)
-- task: DotNetCoreCLI@2
+- task: CopyFiles@2
   inputs:
-    command: push
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    workingDirectory: 'AzureDevopsPipelineTest'
-- task: DotNetCoreCLI@2
-  inputs:
-    command: push
-    projects: '**/*.nupkg'
-    workingDirectory: 'AzureDevopsPipelineTest/Ormico.AzureDevopsPipelineTest.CLI/bin/$(buildConfiguration)/Ormico.AzureDevopsPipelineTest.CLI.1.0.0.nupkg'
+    SourceFolder: 'AzureDevopsPipelineTest'
+    Contents: '**/*.nupkg'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
