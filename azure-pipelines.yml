@@ -27,7 +27,7 @@ steps:
     command: 'build'
     projects: 'AzureDevopsPipelineTest/*.sln'
     workingDirectory: 'AzureDevopsPipelineTest'
-    configuration: $(buildConfiguration)
+    arguments: '--configuration $(buildConfiguration)'
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'AzureDevopsPipelineTest'
