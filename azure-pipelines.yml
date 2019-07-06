@@ -36,4 +36,4 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'echo $(Build.ArtifactStagingDirectory); ls $(Build.ArtifactStagingDirectory); echo $(Build.ArtifactStagingDirectory)/Ormico.AzureDevopsPipelineTest'
+    script: 'echo $(Build.ArtifactStagingDirectory); ls $(Build.ArtifactStagingDirectory); echo $(Build.ArtifactStagingDirectory)/Ormico.AzureDevopsPipelineTest/*'
