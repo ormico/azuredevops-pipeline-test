@@ -20,10 +20,10 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '*.sln'
+    projects: 'AzureDevopsPipelineTest/*.sln'
     workingDirectory: 'AzureDevopsPipelineTest'
 - task: DotNetCoreCLI@2
   inputs:
     command: pack
-    projects: '*.sln'
+    projects: 'AzureDevopsPipelineTest/*.sln'
     workingDirectory: 'AzureDevopsPipelineTest'
