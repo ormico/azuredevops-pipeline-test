@@ -1,0 +1,6 @@
+*.suo
+*.user
+AzureDevopsPipelineTest/.vs/*
+AzureDevopsPipelineTest/Ormico.AzureDevopsPipelineTest/bin/*
+AzureDevopsPipelineTest/Ormico.AzureDevopsPipelineTest/obj/*
+*.orig
