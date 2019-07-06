@@ -22,9 +22,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'echo $(Version); echo $(BN)'
-- task: CmdLine@2
-  inputs:
-    script: 'echo $(Version)'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
