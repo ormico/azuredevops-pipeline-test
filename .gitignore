@@ -3,4 +3,6 @@
 AzureDevopsPipelineTest/.vs/*
 AzureDevopsPipelineTest/Ormico.AzureDevopsPipelineTest/bin/*
 AzureDevopsPipelineTest/Ormico.AzureDevopsPipelineTest/obj/*
+AzureDevopsPipelineTest/Ormico.AzureDevopsPipelineTest.CLI/bin/*
+AzureDevopsPipelineTest/Ormico.AzureDevopsPipelineTest.CLI/obj/*
 *.orig
