@@ -17,6 +17,13 @@ variables:
   Version: '$(Major).$(Minor).$(Build.BuildNumber)'
 
 steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'echo $(Version)'
+- task: CmdLine@2
+  inputs:
+    script: 'echo $(Version)'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
