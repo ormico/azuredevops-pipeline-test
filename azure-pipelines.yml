@@ -30,5 +30,5 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: push
-    projects: 'AzureDevopsPipelineTest/*.sln'
+    projects: '**/*.nupkg'
     workingDirectory: 'AzureDevopsPipelineTest'
