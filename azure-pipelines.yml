@@ -29,11 +29,6 @@ steps:
     workingDirectory: 'AzureDevopsPipelineTest'
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'publish'
-    projects: 'AzureDevopsPipelineTest/*.sln'
-    workingDirectory: 'AzureDevopsPipelineTest'
-- task: DotNetCoreCLI@2
-  inputs:
     command: pack
     projects: 'AzureDevopsPipelineTest/*.sln'
     workingDirectory: 'AzureDevopsPipelineTest'
