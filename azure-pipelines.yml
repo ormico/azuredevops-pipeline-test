@@ -31,8 +31,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: push
-    projects: '**/*.nupkg'
-    workingDirectory: 'AzureDevopsPipelineTest/Ormico.AzureDevopsPipelineTest/bin/$(buildConfiguration)/Ormico.AzureDevopsPipelineTest.1.0.0.nupkg'
+    workingDirectory: 'AzureDevopsPipelineTest'
 - task: DotNetCoreCLI@2
   inputs:
     command: push
