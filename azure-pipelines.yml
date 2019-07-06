@@ -14,7 +14,8 @@ variables:
   Major: '1'
   Minor: '0'
   Patch: '0'
-  Version: '$(Major).$(Minor).$(Build.BuildNumber)'
+  Version: '$(Major).$(Minor).$(Patch)'
+  BN: $(Build.BuildNumber)
 
 steps:
 - task: Bash@3
