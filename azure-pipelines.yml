@@ -33,3 +33,5 @@ steps:
 #    SourceFolder: 'AzureDevopsPipelineTest'
 #    Contents: '**/*.nupkg'
 #    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- bash: echo $(Build.ArtifactStagingDirectory)
+- bash: echo $(Build.StagingDirectory)
