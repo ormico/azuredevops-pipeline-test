@@ -8,8 +8,9 @@ variables:
   Minor: '0'
 #  Patch: '0'
   Patch: $(Build.BuildId)
-  Version: '$(Major).$(Minor).$(Patch)'
+#  Version: '$(Major).$(Minor).$(Patch)'
 #  Version: '$(Major).$(Minor).$(Build.BuildNumber)'
+  Version: '$(VersionX)'
   BN: $(Build.BuildNumber)
 steps:
 - task: Bash@3
