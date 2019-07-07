@@ -3,6 +3,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 variables:
+- group: version-group
   buildConfiguration: 'Release'
   Major: '1'
   Minor: '0'
@@ -10,7 +11,7 @@ variables:
   Patch: $(Build.BuildId)
 #  Version: '$(Major).$(Minor).$(Patch)'
 #  Version: '$(Major).$(Minor).$(Build.BuildNumber)'
-  Version: '$(VersionX)'
+  Version: $(VersionX)
   BN: $(Build.BuildNumber)
 steps:
 - task: Bash@3
