@@ -3,7 +3,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 variables:
-- group: version-group
   buildConfiguration: 'Release'
   Major: '1'
   Minor: '0'
