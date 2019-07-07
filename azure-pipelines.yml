@@ -1,34 +1,29 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
 - master
-
 pool:
   vmImage: 'ubuntu-latest'
-
 variables:
   buildConfiguration: 'Release'
   Major: '1'
   Minor: '0'
-  Patch: '0'
+#  Patch: '0'
+  Patch: $(Build.BuildId)
   Version: '$(Major).$(Minor).$(Patch)'
+#  Version: '$(Major).$(Minor).$(Build.BuildNumber)'
   BN: $(Build.BuildNumber)
-#  BI: $()
 steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'echo $(Version); echo $(BN)'
+    script: 'echo $(Version); echo $(BN); echo $(name)'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: 'AzureDevopsPipelineTest/*.sln'
     workingDirectory: 'AzureDevopsPipelineTest'
-- task: DotNetCoreCLI@2
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+#- bash: ls $(Build.StagingDirectory)/*.nupkg
+- task: PublishBuildArtifacts@1
   inputs:
-    command: pack
-    projects: 'AzureDevopsPipelineTest/*.sln'
-    workingDirectory: 'AzureDevopsPipelineTest'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: nuget-artifacts
