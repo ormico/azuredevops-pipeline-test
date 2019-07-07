@@ -6,9 +6,10 @@ variables:
   buildConfiguration: 'Release'
   Major: '1'
   Minor: '0'
-  Patch: '0'
-#  Version: '$(Major).$(Minor).$(Patch)'
-  Version: '$(Major).$(Minor).$(Build.BuildNumber)'
+#  Patch: '0'
+  Patch: $(Build.BuildId)
+  Version: '$(Major).$(Minor).$(Patch)'
+#  Version: '$(Major).$(Minor).$(Build.BuildNumber)'
   BN: $(Build.BuildNumber)
 steps:
 - task: Bash@3
@@ -21,7 +22,7 @@ steps:
     projects: 'AzureDevopsPipelineTest/*.sln'
     workingDirectory: 'AzureDevopsPipelineTest'
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-- bash: ls $(Build.StagingDirectory)/*.nupkg
+#- bash: ls $(Build.StagingDirectory)/*.nupkg
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
